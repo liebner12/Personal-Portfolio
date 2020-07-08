@@ -1,0 +1,424 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Global styles */
+:root{
+    --accentColor: linear-gradient(to right, #00f7ff, #007FFF);
+    --accent-simple: #007FFF;
+    --accent-simple-hover: #007FFF;
+    --primary: #e4e4e4;
+    --bgcolor: rgb(15,15,15);
+    --second-black: rgb(25,25,25);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html,body {
+    font-family: "Share Tech Mono", monospace;
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background: var(--bgcolor);
+    color: var(--primary);
+    min-width:  300px;
+    
+}
+section{
+    overflow: hidden;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: var(--primary);
+}
+hr{
+    height: 2px;
+    background: var(--accentColor);
+    border: none;
+    width: 100%;
+}
+.profile-pic{
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    border-radius: 50%;
+    border: solid var(--accent-simple) 2px;
+}
+.block{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 4rem;
+}
+/* Nav */
+#nav-icon{
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    margin: 1em;
+}
+.bar-1, .bar-2, .bar-3{
+    background-image: var(--accentColor);
+    width: 2em;
+    height: 5px;
+    margin: 0.3em;
+    transition: 0.4s;
+}
+.change .bar-1 {
+    -webkit-transform: rotate(-45deg) translate(-14px);
+    transform: rotate(-45deg) translate(-14px);  
+}
+.change .bar-2 {
+    opacity: 0;
+}
+.change .bar-3 {
+    -webkit-transform: rotate(45deg) translate(-14px);
+    transform: rotate(45deg) translate(-14px);
+}
+#nav-list {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--second-black);
+    box-shadow: 3px 3px rgb(16, 16, 16);
+    padding-top: 30px;
+    width: 13em;
+    height: 100vh;
+    left: -14em;
+    z-index: 1;
+    transition: all 650ms ease-in-out;
+}
+#nav-list a:hover{
+    color: var(--accent-simple);
+}
+.active #nav-list  {
+    left: 0;
+}
+.nav-item {
+    margin: 1.2rem;
+}
+/* landing page */ 
+#landing-page{
+    height: 100vh;
+    background: url("/images/rysunek47.svg") center no-repeat;
+    background-size: cover;   
+    /* background by SVGBackgrounds.com */
+}
+#landing-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+    text-transform: uppercase;
+    padding: 6px;
+    text-align: center;
+}
+#inline{
+    display: inline-flex;
+}
+#inline h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 2s steps(30, end),
+        blink-caret .75s step-end infinite;
+}
+#main-text h2{
+    margin: 20px 20px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    background: var(--accentColor);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#main-text p{
+    font-size: 1rem;
+}
+.button{
+    background: var(--accent-simple);
+    transition: 0.3s;
+    padding: 0.6rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#contact-button{
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+.button:hover{
+    background: var(--accent-simple-hover);
+}
+.fa-angle-down{
+    margin-top: 1.2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/*About section*/
+
+#about-wrapper{   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;  
+}
+#about img{
+    margin: 3rem 0;
+}
+#about h2{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+#about .right p{
+    margin: 1.8rem 0;
+}
+.right h2{
+    font-size: 2rem;
+}
+/*Last 3 sections*/
+.my-section{
+    margin: 3rem 1rem 1rem 1rem;
+}
+.my-section h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/*Services*/
+#services-wrapper{
+    text-align: center;
+}
+#services-wrapper .block{
+    grid-gap: 1rem;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--second-black);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.box h3{
+    background: var(--accent-simple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/*Projects*/
+#projects .block{
+    grid-gap: 3rem;
+}
+.project-block{
+    background-color: var(--second-black);
+    border-radius: 10px;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.project-text{
+    margin-bottom: 3rem;
+}
+.project-image{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: auto;
+    width: 100%;
+}
+.project-block p, .project-block h3{
+    padding: 1rem;
+}
+.project-block h3{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent-simple);
+    background: var(--accentColor);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-prj{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.btn-text{
+    margin-left: 0.5rem;
+    display:block;
+}
+/*Footer*/
+footer{
+    text-align: center;
+}
+#author{
+    margin-bottom: 1rem;
+}
+#contact-header h2{
+    margin-bottom: 2rem;
+}
+#contact-header{
+    margin-bottom: 3rem;
+}
+#contact-wrapper p, #contact-wrapper a{
+    font-size: 1.5rem;
+}
+#contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-link{ 
+    margin: 0.8rem;
+    color: var(--accent-simple);
+}
+.contact-link:hover{ 
+    color: var(--accent-simple-hover));
+}
+#nav-back{
+    margin: 2rem 0 1rem;
+}
+#nav-back a{
+    font-size: 0.9rem;
+    color: var(--accent-simple);
+}
+#nav-back a:hover{
+    color: var(--accent-simple-hover);
+}
+@media (min-width: 768px) {
+    .my-section{
+        margin: 3rem;
+    }
+    .block{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #services .block, #projects .block{
+        grid-gap: 2rem;
+    }
+    .box{
+        padding: 1rem;
+    }
+    #contacts{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 992px) { 
+    
+    #about-wrapper{
+        flex-direction: row;
+        margin: 10rem;
+    }
+    #profile-img{
+        margin: 0 3rem 0 0;
+    }
+    .my-section{
+        margin: 5rem 10rem;
+    } 
+    .block{
+        margin-top: 5rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .box{
+        padding: 3rem;
+    }
+    #services .block, #projects .block{
+        grid-gap: 4rem;
+    }
+    hr{
+        width: 80%;
+        margin: auto;
+    }
+}
+@media (min-width: 1200px) { 
+    .my-section{
+        margin: 5rem 15rem;
+    } 
+    .block{
+        margin-top: 5rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+    #services .block, #projects .block{
+        grid-column-gap: 8rem;
+        grid-row-gap: 4rem;
+    }
+    .box{
+        padding: 3rem;
+    }
+    hr{
+        width: 80%;
+        margin: auto;
+    }
+      
+}
+@keyframes typing{
+    from {width: 0}
+    to {width: 100%}
+}
+@keyframes blink-caret{
+    from, to {border-color: transparent;}
+    50%{ border-color: #007FFF;}
+}
