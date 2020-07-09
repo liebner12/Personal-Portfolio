@@ -45,11 +45,11 @@ table {
 /* Global styles */
 :root{
     --accentColor: linear-gradient(to right, #00f7ff, #007FFF);
-    --accent-simple: #007FFF;
-    --accent-simple-hover: #007FFF;
+    --accent-simple: rgba(0, 127, 255, 0.8);
+    --accent-simple-hover: rgba(0, 127, 255, 1);
     --primary: #e4e4e4;
-    --bgcolor: rgb(15,15,15);
-    --second-black: rgb(25,25,25);
+    --bgcolor: rgb(20,20,20);
+    --second-black: rgb(30,30,30);
 }
 * {
     margin: 0;
@@ -92,7 +92,17 @@ hr{
     grid-template-columns: repeat(1,1fr);
     align-items: center;
     justify-items: center;
-    margin-bottom: 4rem;
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
+.button-text{
+    background: var(--accent-simple);
+    transition: 0.2s;
+}
+.button-text:hover{
+    background: var(--accent-simple-hover);
 }
 /* Nav */
 #nav-icon{
@@ -146,7 +156,7 @@ hr{
 /* landing page */ 
 #landing-page{
     height: 100vh;
-    background: url("/images/rysunek47.svg") center no-repeat;
+    background: url("/images/rysunek.svg") center no-repeat;
     background-size: cover;   
     /* background by SVGBackgrounds.com */
 }
@@ -159,7 +169,7 @@ hr{
     top: 50%;
     transform: translateY(-40%);
     text-transform: uppercase;
-    padding: 6px;
+    margin: 6px;
     text-align: center;
 }
 #inline{
@@ -178,85 +188,82 @@ hr{
         blink-caret .75s step-end infinite;
 }
 #main-text h2{
-    margin: 20px 20px;
+    margin: 1rem;
     font-weight: 700;
     font-size: 1.6rem;
     background: var(--accentColor);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-#main-text p{
-    font-size: 1rem;
-}
-.button{
-    background: var(--accent-simple);
-    transition: 0.3s;
-    padding: 0.6rem;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
 #contact-button{
-    border-radius: 1rem;
     margin-top: 2rem;
 }
-.button:hover{
-    background: var(--accent-simple-hover);
+#landing-container .button-text{
+    padding: 0.8rem;
+    border-radius: 1rem;
+    
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .fa-angle-down{
     margin-top: 1.2rem;
     font-size: 2rem;
     cursor: pointer;
 }
-
+/*Last 4 sections*/
+.my-section{
+    margin: 3rem 1rem;
+}
+.my-section h2{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
 /*About section*/
-
 #about-wrapper{   
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;  
 }
-#about img{
-    margin: 3rem 0;
-}
 #about h2{
-    text-align: left;
     margin-bottom: 1rem;
+    text-align: left;
 }
-#about .right p{
+#about p{
     margin: 1.8rem 0;
 }
-.right h2{
-    font-size: 2rem;
-}
-/*Last 3 sections*/
-.my-section{
-    margin: 3rem 1rem 1rem 1rem;
-}
-.my-section h2{
-    text-align: center;
-    font-size: 2rem;
+#about img{
     margin-bottom: 3rem;
-    font-weight: 700;
 }
-
 /*Services*/
 #services-wrapper{
     text-align: center;
 }
 #services-wrapper .block{
-    grid-gap: 1rem;
+    grid-gap: 3rem;
 }
 .box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
+    padding: 2rem;
     background-color: var(--second-black);
     border-radius: 10px;
     height: 100%;
     width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 1s ease-in-out;
+    position: relative;
+}
+.box:nth-of-type(odd){
+    left: -100%;
+}
+.box:nth-of-type(even){
+    left: 100%;
+}
+.box.fade-in{
+    left: 0;
 }
 .box h3{
     background: var(--accent-simple);
@@ -268,6 +275,9 @@ hr{
 }
 
 /*Projects*/
+#projects h2{
+    text-align: center;
+}
 #projects .block{
     grid-gap: 3rem;
 }
@@ -279,7 +289,7 @@ hr{
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .project-text{
-    margin-bottom: 3rem;
+    margin-bottom: 3.8rem;
 }
 .project-image{
     border-top-left-radius: 10px;
@@ -288,7 +298,7 @@ hr{
     width: 100%;
 }
 .project-block p, .project-block h3{
-    padding: 1rem;
+    margin: 1rem;
 }
 .project-block h3{
     font-weight: 700;
@@ -302,25 +312,21 @@ hr{
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+.btn-prj .button-text{
+    padding: 0.8rem;
+    width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.btn-text{
-    margin-left: 0.5rem;
-    display:block;
-}
-/*Footer*/
-footer{
+
+/*contact section*/
+#contact-wrapper{
     text-align: center;
-}
-#author{
     margin-bottom: 1rem;
 }
-#contact-header h2{
-    margin-bottom: 2rem;
-}
 #contact-header{
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 #contact-wrapper p, #contact-wrapper a{
     font-size: 1.5rem;
@@ -336,10 +342,17 @@ footer{
     color: var(--accent-simple);
 }
 .contact-link:hover{ 
-    color: var(--accent-simple-hover));
+    color: var(--accent-simple-hover);
+}
+/*Footer*/
+footer{
+    text-align: center;
+}
+#author{
+    margin-bottom: 1rem;
 }
 #nav-back{
-    margin: 2rem 0 1rem;
+    margin: 1rem 0;
 }
 #nav-back a{
     font-size: 0.9rem;
@@ -352,14 +365,17 @@ footer{
     .my-section{
         margin: 3rem;
     }
+    #about-wrapper{
+        flex-direction: row;
+    }
+    #profile-img{
+        margin: 0 3rem 0 0;
+    }
     .block{
         grid-template-columns: repeat(2,1fr);
     }
-    #services .block, #projects .block{
+    #projects .block{
         grid-gap: 2rem;
-    }
-    .box{
-        padding: 1rem;
     }
     #contacts{
         flex-direction: row;
@@ -367,23 +383,11 @@ footer{
     }
 }
 @media (min-width: 992px) { 
-    
-    #about-wrapper{
-        flex-direction: row;
-        margin: 10rem;
-    }
-    #profile-img{
-        margin: 0 3rem 0 0;
-    }
     .my-section{
-        margin: 5rem 10rem;
+        margin: 4rem 10rem;
     } 
-    .block{
-        margin-top: 5rem;
-        grid-template-columns: repeat(2,1fr);
-    }
-    .box{
-        padding: 3rem;
+    .my-section h2{
+        margin-bottom: 4rem;
     }
     #services .block, #projects .block{
         grid-gap: 4rem;
@@ -395,24 +399,8 @@ footer{
 }
 @media (min-width: 1200px) { 
     .my-section{
-        margin: 5rem 15rem;
+        margin: 4rem 15rem;
     } 
-    .block{
-        margin-top: 5rem;
-        grid-template-columns: repeat(2,1fr);
-    }
-    #services .block, #projects .block{
-        grid-column-gap: 8rem;
-        grid-row-gap: 4rem;
-    }
-    .box{
-        padding: 3rem;
-    }
-    hr{
-        width: 80%;
-        margin: auto;
-    }
-      
 }
 @keyframes typing{
     from {width: 0}
