@@ -201,7 +201,6 @@ hr{
 #landing-container .button-text{
     padding: 0.8rem;
     border-radius: 1rem;
-    
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .fa-angle-down{
@@ -253,17 +252,19 @@ hr{
     height: 100%;
     width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: all 1s ease-in-out;
+    transition: all 1s;
     position: relative;
+    opacity: 0;
 }
 .box:nth-of-type(odd){
-    left: -100%;
+    left: -100px;
 }
 .box:nth-of-type(even){
-    left: 100%;
+    left: 100px;
 }
 .box.fade-in{
     left: 0;
+    opacity: 1;
 }
 .box h3{
     background: var(--accent-simple);
@@ -361,6 +362,7 @@ footer{
 #nav-back a:hover{
     color: var(--accent-simple-hover);
 }
+/*media queries*/
 @media (min-width: 768px) {
     .my-section{
         margin: 3rem;
@@ -402,6 +404,7 @@ footer{
         margin: 4rem 15rem;
     } 
 }
+/*keyframes*/
 @keyframes typing{
     from {width: 0}
     to {width: 100%}
