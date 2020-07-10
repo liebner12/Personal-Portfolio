@@ -136,7 +136,7 @@ hr{
     justify-content: center;
     align-items: center;
     background: var(--second-black);
-    box-shadow: 3px 3px rgb(16, 16, 16);
+    box-shadow: 3px 0px rgb(16, 16, 16);
     padding-top: 30px;
     width: 13em;
     height: 100vh;
@@ -252,19 +252,18 @@ hr{
     height: 100%;
     width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: all 1s;
+    transition: all 1.2s;
     position: relative;
-    opacity: 0;
+    
 }
-.box:nth-of-type(odd){
-    left: -100px;
+
+.box.fade-in:nth-of-type(even){
+    animation: 
+        slide-right 1s ease;
 }
-.box:nth-of-type(even){
-    left: 100px;
-}
-.box.fade-in{
-    left: 0;
-    opacity: 1;
+.box.fade-in:nth-of-type(odd){
+    animation: 
+        slide-left 1s ease;
 }
 .box h3{
     background: var(--accent-simple);
@@ -384,7 +383,10 @@ footer{
         flex-wrap: wrap;
     }
 }
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
+    html,body{
+        font-size: 20px;
+    } 
     .my-section{
         margin: 4rem 10rem;
     } 
@@ -412,4 +414,24 @@ footer{
 @keyframes blink-caret{
     from, to {border-color: transparent;}
     50%{ border-color: #007FFF;}
+}
+@keyframes slide-left{
+    0%{
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-right{
+    0%{
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
