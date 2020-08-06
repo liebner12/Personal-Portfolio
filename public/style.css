@@ -150,11 +150,15 @@ hr {
     background: var(--second-black);
     box-shadow: 3px 0px rgb(16, 16, 16);
     padding-top: 30px;
-    width: 13em;
+    width: 100%;
     height: 100vh;
-    left: -14em;
+    left: -100%;
     z-index: 1;
     transition: all 650ms ease-in-out;
+}
+
+#nav-list .nav-item {
+    opacity: 0;
 }
 
 #nav-list a:hover {
@@ -165,8 +169,12 @@ hr {
     left: 0;
 }
 
+.active #nav-list .nav-item {
+    opacity: 1;
+}
+
 .nav-item {
-    margin: 1.2rem;
+    margin: 1.2rem 0;
 }
 
 /* landing page */
@@ -356,7 +364,7 @@ hr {
 }
 
 .btn-prj .button-text {
-    padding: 0.8rem;
+    padding: 1rem;
     width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -422,6 +430,12 @@ footer {
     .my-section {
         margin: 3rem;
     }
+    #main-text h1 {
+        font-size: 4rem;
+    }
+    #main-text h2 {
+        font-size: 4.5rem;
+    }
     #about-wrapper {
         flex-direction: row;
     }
@@ -459,7 +473,6 @@ footer {
     }
     #contact-wrapper {
         margin: 4rem;
-        ma
     }
 }
 
