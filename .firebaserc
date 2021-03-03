@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "personal-portfolio-bbf46"
+  },
+  "targets": {
+    "personal-portfolio-bbf46": {
+      "hosting": {
+        "prod": [
+          "personal-portfolio-bbf46"
+        ],
+        "out": [
+          "michalliebner"
+        ]
+      }
+    }
+  }
+}
